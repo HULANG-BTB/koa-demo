@@ -7,7 +7,8 @@ import debug from 'debug'
 import { upload } from './config/settings'
 import koaBody from 'koa-body'
 
-import autoLoadRoutes from './routes'
+// 加载器
+import autoloader from './lib/core/loader'
 
 // 创建 Koa2 实例
 const app = new Koa()
@@ -16,7 +17,7 @@ const app = new Koa()
 app.use(koaBody(upload))
 
 // 注册路由
-autoLoadRoutes(app)
+autoloader(app)
 
 // 创建 Http 实例
 const server = http.createServer(app.callback())
