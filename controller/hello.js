@@ -3,7 +3,7 @@ import { Controller, GetMapping, PostMapping, PutMapping, DeleteMapping  } from 
 @Controller
 class Hello {
 
-  // static prefix = '/'
+  static prefix = '/'
 
   @GetMapping('/hello')
   static async get(ctx) {
