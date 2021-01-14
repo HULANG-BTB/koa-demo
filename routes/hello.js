@@ -1,30 +1,14 @@
 import koaRouter from 'koa-router'
+import Hello from '../controller/hello'
 
 const router = new koaRouter()
 
-router.get('/hello', async ctx => {
-  ctx.body = ctx.query
-})
+router.get('/hello', Hello.get)
 
-router.post('/hello', async ctx => {
-  ctx.body = {
-    body:ctx.request.body,
-    query: ctx.query
-  }
-})
+router.post('/hello', Hello.post)
 
-router.put('/hello', async ctx => {
-  ctx.body = {
-    body:ctx.request.body,
-    query: ctx.query
-  }
-})
+router.put('/hello', Hello.put)
 
-router.delete('/hello/:var1/:var2', async ctx => {
-  ctx.body = {
-    query: ctx.query,
-    path: ctx.params
-  }
-})
+router.delete('/hello/:var1/:var2', Hello.delete)
 
 export default router
