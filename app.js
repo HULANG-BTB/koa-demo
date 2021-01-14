@@ -3,10 +3,17 @@ import Koa from 'koa'
 import http from 'http'
 import debug from 'debug'
 
+// 配置信息
+import { upload } from './config/settings'
+import koaBody from 'koa-body'
+
 import hello from './routes/hello'
 
 // 创建 Koa2 实例
 const app = new Koa()
+
+// 中间件
+app.use(koaBody(upload))
 
 // 注册路由
 app.use(hello.routes(), hello.allowedMethods())
