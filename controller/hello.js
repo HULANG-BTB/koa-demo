@@ -1,19 +1,18 @@
-import { Controller, GetMapping, PostMapping, PutMapping, DeleteMapping  } from '../lib/core/decorator'
+import { Controller, GetMapping, PostMapping, PutMapping, DeleteMapping } from '../lib/core/decorator'
 
 @Controller
 class Hello {
-
   static prefix = '/'
 
   @GetMapping('/hello')
   static async get(ctx) {
-    ctx.body = ctx.query
+    ctx.body = await this.service.Hello.say()
   }
 
   @PostMapping('/hello')
   static async post(ctx) {
     ctx.body = {
-      body:ctx.request.body,
+      body: ctx.request.body,
       query: ctx.query
     }
   }
@@ -21,7 +20,7 @@ class Hello {
   @PutMapping('/hello')
   static async put(ctx) {
     ctx.body = {
-      body:ctx.request.body,
+      body: ctx.request.body,
       query: ctx.query
     }
   }
