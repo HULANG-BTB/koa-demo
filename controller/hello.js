@@ -5,8 +5,8 @@ class Hello {
   static prefix = '/'
 
   @GetMapping('/hello')
-  static async get(ctx) {
-    ctx.body = await this.service.Hello.say()
+  static async get(ctx, service) {
+    ctx.body = await service.Hello.say()
   }
 
   @PostMapping('/hello')
