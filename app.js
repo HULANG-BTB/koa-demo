@@ -6,6 +6,8 @@ import debug from 'debug'
 // 配置信息
 import { upload } from './config/settings'
 import koaBody from 'koa-body'
+import koaJson from 'koa-json'
+import koaLogger from 'koa-logger'
 
 // 加载器
 import autoloader from './lib/core/loader'
@@ -14,6 +16,8 @@ import autoloader from './lib/core/loader'
 const app = new Koa()
 
 // 中间件
+app.use(koaJson())
+app.use(koaLogger())
 app.use(koaBody(upload))
 
 // 注册路由
