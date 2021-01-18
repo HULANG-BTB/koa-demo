@@ -1,0 +1,32 @@
+import { Controller, GetMapping, PostMapping, PutMapping, DeleteMapping } from '../lib/core/decorator'
+
+@Controller
+class {{name}} {
+  static prefix = '/{{route}}'
+
+  @GetMapping('/get')
+  static async get() {
+    const { page, size } = this.ctx.query
+    return await this.service.{{name}}.get({ page, size })
+  }
+
+  @PostMapping('/post')
+  static async post() {
+    const { title } = this.ctx.body
+    return await this.service.{{name}}.post({ title })
+  }
+
+  @PutMapping('/put')
+  static async put() {
+    const { id, title } = this.ctx.body
+    return await this.service.{{name}}.put({ id, title })
+  }
+
+  @DeleteMapping('/delete')
+  static async delete() {
+    const { id } = this.ctx.query
+    return await this.service.{{name}}.delete({ id })
+  }
+}
+
+export default {{name}}

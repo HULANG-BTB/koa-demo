@@ -1,0 +1,22 @@
+import { Service } from '../lib/core/decorator'
+
+@Service
+class {{name}} {
+  static async get({ page, size }) {
+    return { page, size }
+  }
+
+  static async post(data) {
+    return data
+  }
+
+  static async put(data) {
+    return data
+  }
+
+  static async delete({ id }) {
+    return { id }
+  }
+}
+
+export default {{name}}
