@@ -32,6 +32,11 @@ class Hello {
       path: ctx.params
     }
   }
+
+  @GetMapping('/create')
+  static async create() {
+    return await this.service.Hello.create()
+  }
 }
 
 export default Hello
