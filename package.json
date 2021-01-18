@@ -4,7 +4,8 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app.js --exec babel-node"
+    "dev": "nodemon app.js --exec babel-node",
+    "models": "babel-node model.config.js"
   },
   "dependencies": {
     "debug": "^4.3.1",
@@ -12,7 +13,9 @@
     "koa-body": "^4.2.0",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.1",
-    "koa-router": "^10.0.0"
+    "koa-router": "^10.0.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -24,6 +27,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/runtime": "^7.12.5",
     "nodemon": "^2.0.7",
-    "plop": "^2.7.4"
+    "plop": "^2.7.4",
+    "sequelize-auto": "^0.7.7"
   }
 }
