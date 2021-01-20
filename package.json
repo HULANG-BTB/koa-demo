@@ -1,11 +1,14 @@
 {
   "name": "koa-demo",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "src/app.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon app.js --exec babel-node",
-    "models": "babel-node model.config.js"
+    "dev": "nodemon src/app.js --exec babel-node",
+    "models": "babel-node model.config.js",
+    "build": "babel . --out-dir dist",
+    "start": "node src/app.js",
+    "prd": "pm2 start src/app.js"
   },
   "dependencies": {
     "debug": "^4.3.1",

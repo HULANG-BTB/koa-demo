@@ -1,5 +1,5 @@
 import SequelizeAuto from 'sequelize-auto'
-import database from './config/database'
+import database from './src/config/database'
 
 
 const auto = new SequelizeAuto(database.database, database.username, database.password, {
