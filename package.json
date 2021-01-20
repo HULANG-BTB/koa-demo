@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "nodemon src/app.js --exec babel-node",
     "models": "babel-node model.config.js",
-    "build": "babel . --out-dir dist",
+    "build": "babel src --out-dir dist",
     "start": "node src/app.js",
-    "prd": "pm2 start src/app.js"
+    "prd": "pm2 start dist/app.js"
   },
   "dependencies": {
     "debug": "^4.3.1",
